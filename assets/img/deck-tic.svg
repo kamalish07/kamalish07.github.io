@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 440" width="600" height="440" role="img" aria-label="Business strategy cards and decision paths">
+  <rect width="600" height="440" fill="#FFD52E"/>
+  <g stroke="#12100E" stroke-width="5" fill="none">
+    <path d="M300 96 V150 M300 150 H150 V210 M300 150 H450 V210"/>
+  </g>
+  <g stroke="#12100E" stroke-width="5">
+    <rect x="214" y="40" width="172" height="60" rx="14" fill="#FFF4E0"/>
+    <rect x="76"  y="210" width="148" height="86" rx="14" fill="#FF4E2B"/>
+    <rect x="376" y="210" width="148" height="86" rx="14" fill="#2F5FFF"/>
+    <rect x="200" y="330" width="200" height="72" rx="14" fill="#C9A7FF"/>
+  </g>
+  <g font-family="'Space Mono',monospace" font-size="14" font-weight="700" text-anchor="middle">
+    <text x="300" y="78" fill="#12100E">PROBLEM</text>
+    <text x="150" y="260" fill="#FFF4E0">OPTION A</text>
+    <text x="450" y="260" fill="#FFF4E0">OPTION B</text>
+    <text x="300" y="374" fill="#12100E">DECISION</text>
+  </g>
+  <g stroke="#12100E" stroke-width="5" fill="none">
+    <path d="M150 296 V330 H200 M450 296 V330 H400"/>
+  </g>
+  <circle cx="530" cy="70" r="34" fill="#FFF4E0" stroke="#12100E" stroke-width="5"/>
+  <text x="530" y="80" font-family="Arial Black, Arial, sans-serif" font-size="22" fill="#12100E" text-anchor="middle">★</text>
+</svg>

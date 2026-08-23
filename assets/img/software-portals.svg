@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 440" width="600" height="440" role="img" aria-label="Multiple support portals connected to one workspace">
+  <rect width="600" height="440" fill="#C9A7FF"/>
+  <g opacity=".3" stroke="#12100E" stroke-width="3">
+    <path d="M0 110 H600 M0 330 H600 M200 0 V440 M400 0 V440"/>
+  </g>
+
+  <!-- connectors -->
+  <g stroke="#12100E" stroke-width="5" fill="none" stroke-linecap="round">
+    <path d="M300 220 L120 96"/>
+    <path d="M300 220 L480 96"/>
+    <path d="M300 220 L120 348"/>
+    <path d="M300 220 L480 348"/>
+  </g>
+
+  <!-- brand portals -->
+  <g stroke="#12100E" stroke-width="5">
+    <rect x="52" y="52" width="136" height="90" rx="14" fill="#FFD52E"/>
+    <rect x="412" y="52" width="136" height="90" rx="14" fill="#46E39B"/>
+    <rect x="52" y="304" width="136" height="90" rx="14" fill="#FF7BAC"/>
+    <rect x="412" y="304" width="136" height="90" rx="14" fill="#FFF4E0"/>
+  </g>
+  <g font-family="'Space Mono',monospace" font-size="14" font-weight="700" fill="#12100E" text-anchor="middle">
+    <text x="120" y="103">BRAND A</text>
+    <text x="480" y="103">BRAND B</text>
+    <text x="120" y="355">BRAND C</text>
+    <text x="480" y="355">BRAND D</text>
+  </g>
+
+  <!-- central workspace -->
+  <rect x="206" y="164" width="188" height="112" rx="18" fill="#12100E" stroke="#12100E" stroke-width="5"/>
+  <text x="300" y="212" font-family="Arial Black, Arial, sans-serif" font-size="19" fill="#FFD52E" text-anchor="middle">ONE</text>
+  <text x="300" y="243" font-family="Arial Black, Arial, sans-serif" font-size="19" fill="#FFF4E0" text-anchor="middle">WORKSPACE</text>
+</svg>

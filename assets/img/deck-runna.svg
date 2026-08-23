@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 440" width="600" height="440" role="img" aria-label="Running training plan and monetisation">
+  <rect width="600" height="440" fill="#46E39B"/>
+
+  <!-- track lanes -->
+  <g stroke="#12100E" stroke-width="4" opacity=".45" fill="none">
+    <path d="M-20 350 Q 300 250 620 350"/>
+    <path d="M-20 386 Q 300 286 620 386"/>
+  </g>
+
+  <!-- runner -->
+  <g stroke="#12100E" stroke-width="6" stroke-linecap="round" fill="none">
+    <circle cx="196" cy="146" r="26" fill="#FFF4E0"/>
+    <path d="M188 178 L206 240"/>
+    <path d="M206 240 L172 300"/>
+    <path d="M206 240 L252 288"/>
+    <path d="M192 196 L142 218"/>
+    <path d="M198 200 L250 176"/>
+  </g>
+
+  <!-- progress rings -->
+  <g fill="none" stroke="#12100E" stroke-width="6">
+    <circle cx="440" cy="150" r="66" opacity=".35"/>
+    <path d="M440 84 A66 66 0 1 1 374 150" stroke="#FF4E2B" stroke-linecap="round"/>
+  </g>
+  <text x="440" y="160" font-family="Arial Black, Arial, sans-serif" font-size="26" fill="#12100E" text-anchor="middle">75%</text>
+
+  <!-- plan rows -->
+  <g stroke="#12100E" stroke-width="4">
+    <rect x="330" y="264" width="228" height="40" rx="10" fill="#FFF4E0"/>
+    <rect x="330" y="318" width="228" height="40" rx="10" fill="#FFD52E"/>
+  </g>
+  <g font-family="'Space Mono',monospace" font-size="14" font-weight="700" fill="#12100E">
+    <text x="348" y="290">FREE PLAN</text>
+    <text x="348" y="344">SUBSCRIPTION</text>
+  </g>
+</svg>

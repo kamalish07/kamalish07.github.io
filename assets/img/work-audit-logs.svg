@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 440" width="600" height="440" role="img" aria-label="Audit log event stream interface">
+  <rect width="600" height="440" fill="#12100E"/>
+  <circle cx="512" cy="70" r="72" fill="#FF4E2B" opacity=".85"/>
+
+  <!-- window chrome -->
+  <rect x="40" y="46" width="520" height="350" rx="16" fill="#FFF4E0" stroke="#12100E" stroke-width="5"/>
+  <rect x="40" y="46" width="520" height="46" rx="16" fill="#FFD52E" stroke="#12100E" stroke-width="5"/>
+  <circle cx="70" cy="69" r="7" fill="#12100E"/><circle cx="94" cy="69" r="7" fill="#12100E"/><circle cx="118" cy="69" r="7" fill="#12100E"/>
+  <rect x="360" y="58" width="180" height="24" rx="12" fill="#FFF4E0" stroke="#12100E" stroke-width="4"/>
+  <text x="450" y="75" font-family="'Space Mono',monospace" font-size="12" font-weight="700" fill="#12100E" text-anchor="middle">FILTER: ALL</text>
+
+  <!-- log rows -->
+  <g stroke="#12100E" stroke-width="4">
+    <rect x="66" y="116" width="468" height="48" rx="10" fill="#46E39B"/>
+    <rect x="66" y="176" width="468" height="48" rx="10" fill="#FFFFFF"/>
+    <rect x="66" y="236" width="468" height="48" rx="10" fill="#C9A7FF"/>
+    <rect x="66" y="296" width="468" height="48" rx="10" fill="#FFFFFF"/>
+  </g>
+  <g font-family="'Space Mono',monospace" font-size="13" font-weight="700" fill="#12100E">
+    <text x="86" y="146">10:24  ticket.updated</text>
+    <text x="86" y="206">10:19  agent.role_changed</text>
+    <text x="86" y="266">09:58  portal.created</text>
+    <text x="86" y="326">09:41  sla.policy_edited</text>
+  </g>
+  <g fill="#12100E">
+    <circle cx="506" cy="140" r="6"/><circle cx="506" cy="200" r="6"/>
+    <circle cx="506" cy="260" r="6"/><circle cx="506" cy="320" r="6"/>
+  </g>
+</svg>

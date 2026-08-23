@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 440" width="600" height="440" role="img" aria-label="Mutual fund asset management strategy">
+  <rect width="600" height="440" fill="#2F5FFF"/>
+  <g opacity=".26" stroke="#FFF4E0" stroke-width="3"><path d="M0 110 H600 M0 220 H600 M0 330 H600"/></g>
+
+  <!-- fund stack -->
+  <g stroke="#12100E" stroke-width="5">
+    <rect x="60" y="250" width="92" height="140" rx="10" fill="#FFF4E0"/>
+    <rect x="168" y="196" width="92" height="194" rx="10" fill="#FFD52E"/>
+    <rect x="276" y="132" width="92" height="258" rx="10" fill="#46E39B"/>
+    <rect x="384" y="86" width="92" height="304" rx="10" fill="#FF4E2B"/>
+  </g>
+  <path d="M106 236 L214 182 L322 118 L430 72" fill="none" stroke="#FFF4E0" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="430" cy="72" r="15" fill="#FFD52E" stroke="#12100E" stroke-width="5"/>
+
+  <!-- rupee badge -->
+  <circle cx="524" cy="330" r="46" fill="#FFF4E0" stroke="#12100E" stroke-width="5"/>
+  <text x="524" y="348" font-family="Arial Black, Arial, sans-serif" font-size="38" fill="#12100E" text-anchor="middle">₹</text>
+
+  <rect x="40" y="34" width="228" height="44" rx="22" fill="#12100E"/>
+  <text x="154" y="63" font-family="'Space Mono',monospace" font-size="15" font-weight="700" fill="#FFD52E" text-anchor="middle">AUM STRATEGY</text>
+</svg>

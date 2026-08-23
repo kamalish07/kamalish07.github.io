@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 440" width="600" height="440" role="img" aria-label="Billing software invoice dashboard">
+  <rect width="600" height="440" fill="#FFE9C7"/>
+  <circle cx="70" cy="380" r="86" fill="#46E39B" opacity=".55"/>
+
+  <!-- invoice sheet -->
+  <g transform="rotate(-3 300 220)">
+    <rect x="118" y="46" width="364" height="348" rx="16" fill="#FFFFFF" stroke="#12100E" stroke-width="5"/>
+    <rect x="118" y="46" width="364" height="60" rx="16" fill="#FF4E2B" stroke="#12100E" stroke-width="5"/>
+    <text x="146" y="86" font-family="Arial Black, Arial, sans-serif" font-size="24" fill="#FFF4E0">INVOICE</text>
+    <text x="452" y="84" font-family="'Space Mono',monospace" font-size="15" font-weight="700" fill="#FFF4E0" text-anchor="end">#0042</text>
+
+    <!-- line items -->
+    <g stroke="#12100E" stroke-width="3.5">
+      <line x1="146" y1="140" x2="454" y2="140"/>
+      <line x1="146" y1="186" x2="454" y2="186"/>
+      <line x1="146" y1="232" x2="454" y2="232"/>
+    </g>
+    <g fill="#12100E" font-family="'Space Mono',monospace" font-size="14">
+      <text x="146" y="132">Design retainer</text><text x="454" y="132" text-anchor="end">12,000</text>
+      <text x="146" y="178">Hosting</text><text x="454" y="178" text-anchor="end">2,400</text>
+      <text x="146" y="224">Support hours</text><text x="454" y="224" text-anchor="end">6,800</text>
+    </g>
+
+    <!-- total -->
+    <rect x="146" y="256" width="308" height="56" rx="12" fill="#FFD52E" stroke="#12100E" stroke-width="4"/>
+    <text x="166" y="292" font-family="Arial Black, Arial, sans-serif" font-size="18" fill="#12100E">TOTAL</text>
+    <text x="434" y="292" font-family="Arial Black, Arial, sans-serif" font-size="20" fill="#12100E" text-anchor="end">₹21,200</text>
+
+    <!-- paid stamp -->
+    <g transform="rotate(-14 380 348)">
+      <rect x="316" y="326" width="128" height="44" rx="10" fill="none" stroke="#2F5FFF" stroke-width="5"/>
+      <text x="380" y="356" font-family="Arial Black, Arial, sans-serif" font-size="20" fill="#2F5FFF" text-anchor="middle">PAID</text>
+    </g>
+  </g>
+
+  <!-- floating coin -->
+  <circle cx="520" cy="120" r="42" fill="#FFD52E" stroke="#12100E" stroke-width="5"/>
+  <text x="520" y="134" font-family="Arial Black, Arial, sans-serif" font-size="30" fill="#12100E" text-anchor="middle">₹</text>
+</svg>

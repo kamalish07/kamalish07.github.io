@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 440" width="600" height="440" role="img" aria-label="Group ordering shared cart concept">
+  <rect width="600" height="440" fill="#FF7BAC"/>
+  <g opacity=".3" stroke="#12100E" stroke-width="3"><path d="M150 0 V440 M300 0 V440 M450 0 V440"/></g>
+
+  <!-- shared cart -->
+  <g stroke="#12100E" stroke-width="6">
+    <path d="M228 168 h150 l-18 116 h-114 z" fill="#FFF4E0"/>
+    <path d="M252 168 q48 -56 96 0" fill="none"/>
+    <circle cx="266" cy="308" r="16" fill="#FFD52E"/>
+    <circle cx="340" cy="308" r="16" fill="#FFD52E"/>
+  </g>
+
+  <!-- three people joining -->
+  <g stroke="#12100E" stroke-width="5">
+    <circle cx="80"  cy="132" r="30" fill="#46E39B"/>
+    <circle cx="80"  cy="270" r="30" fill="#FFD52E"/>
+    <circle cx="520" cy="132" r="30" fill="#C9A7FF"/>
+    <circle cx="520" cy="270" r="30" fill="#FFF4E0"/>
+  </g>
+  <g stroke="#12100E" stroke-width="5" fill="none" stroke-linecap="round" stroke-dasharray="12 10">
+    <path d="M112 146 L222 196"/>
+    <path d="M112 262 L226 240"/>
+    <path d="M488 146 L382 196"/>
+    <path d="M488 262 L378 240"/>
+  </g>
+
+  <!-- split payment pill -->
+  <rect x="186" y="356" width="230" height="50" rx="25" fill="#12100E"/>
+  <text x="301" y="388" font-family="'Space Mono',monospace" font-size="15" font-weight="700" fill="#FFD52E" text-anchor="middle">SPLIT PAYMENT</text>
+
+  <rect x="40" y="34" width="182" height="42" rx="21" fill="#FFF4E0" stroke="#12100E" stroke-width="5"/>
+  <text x="131" y="62" font-family="'Space Mono',monospace" font-size="14" font-weight="700" fill="#12100E" text-anchor="middle">ONE-PAGER</text>
+</svg>

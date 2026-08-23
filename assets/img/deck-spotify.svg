@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 440" width="600" height="440" role="img" aria-label="Focus listening journey teardown">
+  <rect width="600" height="440" fill="#12100E"/>
+  <circle cx="120" cy="360" r="120" fill="#46E39B" opacity=".22"/>
+
+  <!-- journey steps -->
+  <g stroke="#FFF4E0" stroke-width="5" fill="none"><path d="M78 118 H522"/></g>
+  <g stroke="#12100E" stroke-width="5">
+    <circle cx="78"  cy="118" r="21" fill="#46E39B"/>
+    <circle cx="226" cy="118" r="21" fill="#FFD52E"/>
+    <circle cx="374" cy="118" r="21" fill="#FF7BAC"/>
+    <circle cx="522" cy="118" r="21" fill="#FF4E2B"/>
+  </g>
+  <g font-family="'Space Mono',monospace" font-size="12" font-weight="700" fill="#FFF4E0" text-anchor="middle">
+    <text x="78"  y="170">OPEN</text>
+    <text x="226" y="170">SEARCH</text>
+    <text x="374" y="170">CHOOSE</text>
+    <text x="522" y="170">FOCUS</text>
+  </g>
+
+  <!-- equaliser -->
+  <g stroke="#12100E" stroke-width="4">
+    <rect x="86"  y="300" width="34" height="66"  rx="8" fill="#FFF4E0"/>
+    <rect x="132" y="264" width="34" height="102" rx="8" fill="#46E39B"/>
+    <rect x="178" y="228" width="34" height="138" rx="8" fill="#FFD52E"/>
+    <rect x="224" y="278" width="34" height="88"  rx="8" fill="#FFF4E0"/>
+    <rect x="270" y="242" width="34" height="124" rx="8" fill="#FF4E2B"/>
+  </g>
+
+  <!-- friction callout -->
+  <g>
+    <rect x="336" y="232" width="212" height="134" rx="16" fill="#FFF4E0" stroke="#12100E" stroke-width="5"/>
+    <text x="356" y="268" font-family="Arial Black, Arial, sans-serif" font-size="17" fill="#12100E">FRICTION</text>
+    <g font-family="'Space Mono',monospace" font-size="12" fill="#12100E">
+      <text x="356" y="298">cluttered home</text>
+      <text x="356" y="322">too many picks</text>
+      <text x="356" y="346">no focus signal</text>
+    </g>
+  </g>
+</svg>

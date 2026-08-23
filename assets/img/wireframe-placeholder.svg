@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 440" width="600" height="440" role="img" aria-label="Wireframe screen placeholder">
+  <rect width="600" height="440" fill="#FFF4E0"/>
+  <rect x="40" y="34" width="520" height="372" rx="14" fill="#FFFFFF" stroke="#12100E" stroke-width="5"/>
+  <rect x="40" y="34" width="520" height="44" rx="14" fill="#FFE9C7" stroke="#12100E" stroke-width="5"/>
+  <g fill="#12100E"><circle cx="70" cy="56" r="6"/><circle cx="92" cy="56" r="6"/><circle cx="114" cy="56" r="6"/></g>
+
+  <!-- sidebar -->
+  <rect x="62" y="98" width="112" height="286" rx="10" fill="#FFE9C7" stroke="#12100E" stroke-width="4"/>
+  <g stroke="#12100E" stroke-width="4">
+    <line x1="82" y1="126" x2="154" y2="126"/><line x1="82" y1="154" x2="154" y2="154"/>
+    <line x1="82" y1="182" x2="134" y2="182"/><line x1="82" y1="210" x2="154" y2="210"/>
+  </g>
+
+  <!-- content blocks -->
+  <g stroke="#12100E" stroke-width="4">
+    <rect x="196" y="98" width="342" height="112" rx="10" fill="#FFF4E0"/>
+    <rect x="196" y="228" width="160" height="156" rx="10" fill="#FFF4E0"/>
+    <rect x="378" y="228" width="160" height="156" rx="10" fill="#FFF4E0"/>
+  </g>
+  <g stroke="#12100E" stroke-width="3" opacity=".55">
+    <path d="M210 200 L360 112 M250 200 L400 112 M290 200 L440 112 M330 200 L480 112"/>
+    <path d="M208 374 L344 244 M250 374 L350 288"/>
+    <path d="M390 374 L526 244 M432 374 L532 288"/>
+  </g>
+</svg>

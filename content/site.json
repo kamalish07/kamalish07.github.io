@@ -1,0 +1,235 @@
+{
+  "profile": {
+    "name": "KAMALISH",
+    "eyebrow": "Product Manager · IIT Madras",
+    "headline": "Hi - I build products that make sense.",
+    "intro": "I work at the intersection of product strategy, user experience and visual storytelling: turning messy problems into shippable, clearly argued decisions.",
+    "portrait": "assets/img/portrait.png",
+    "email": "kamalish07@gmail.com",
+    "phone": "+91 87789 41986",
+    "phoneHref": "+918778941986",
+    "linkedin": "https://www.linkedin.com/in/kamalish-muthukumar-6527a72a6/",
+    "resume": "assets/Kamalish-Resume.pdf",
+    "footerShout": "LET'S\nBUILD\nSOMETHING"
+  },
+
+  "capabilities": [
+    { "key": "Ps", "title": "Product strategy", "desc": "Requirements, roadmaps & metrics" },
+    { "key": "Ux", "title": "UX & flows", "desc": "Research translated into clarity" },
+    { "key": "Gt", "title": "GTM thinking", "desc": "Markets, positioning & growth" },
+    { "key": "Vc", "title": "Visual craft", "desc": "Decks and systems that communicate" }
+  ],
+
+  "toolkit": ["Figma", "Balsamiq", "Jira", "SQL", "MySQL", "Tableau", "Google Analytics", "Excel", "Canva"],
+
+  "software": [
+    {
+      "slug": "billing",
+      "title": "Billing Software",
+      "kind": "Web app - Billing",
+      "badge": "Web app",
+      "cover": "assets/img/software-billing.svg",
+      "colour": "yellow",
+      "summary": "An invoicing and billing tool built so a small team can raise a bill, track what is owed and close the loop on payment without living in a spreadsheet.",
+      "cardDesc": "Invoicing and billing built so a small team can raise, track and settle bills without a spreadsheet.",
+      "problem": "Small teams bill in spreadsheets and messaging apps. Invoice numbers drift, totals get recalculated by hand, and nobody can answer \"what is still unpaid?\" without opening three files.",
+      "shipped": [
+        "Create and send invoices from a reusable line-item template",
+        "Automatic numbering, tax and total calculation",
+        "Payment status tracking - draft, sent, paid, overdue",
+        "A dashboard showing outstanding versus collected"
+      ],
+      "role": "Scoped the product, defined the data model and the invoice lifecycle, designed the screens, and worked through the edge cases that usually break billing tools: partial payments, edits after sending, and cancelled invoices.",
+      "link": "",
+      "linkLabel": "Visit the site",
+      "linkNote": "link to be added",
+      "facts": [
+        { "k": "Type", "v": "Web application" },
+        { "k": "Focus", "v": "Invoicing & payments" },
+        { "k": "Role", "v": "Product & design" }
+      ],
+      "tags": ["Web app", "Billing", "Product"]
+    },
+    {
+      "slug": "audit-logs",
+      "title": "Desk365 Audit Logs",
+      "kind": "B2B SaaS - Shipped at Desk365",
+      "badge": "Shipped at Desk365",
+      "cover": "assets/img/work-audit-logs.svg",
+      "colour": "mint",
+      "summary": "A trustworthy record of every change made inside the helpdesk, so admins can answer \"who changed this, and when?\" without asking support.",
+      "cardDesc": "A trustworthy record of every change in the helpdesk - events, filters and retention.",
+      "problem": "Admins had no way to see what had changed in their workspace. When a ticket was reassigned, an SLA policy edited or an agent's role changed, the only trail was memory - which made trust and compliance hard.",
+      "shipped": [
+        "A defined catalogue of auditable events across tickets, agents and settings",
+        "Filtering by actor, event type and date range",
+        "A readable event stream rather than raw system logs",
+        "Retention rules agreed with engineering"
+      ],
+      "role": "Owned this feature end to end: defined requirements, wrote the PRD and user stories, decided which events were worth logging, and coordinated Engineering, Design and QA through to release.",
+      "link": "https://www.desk365.io/",
+      "linkLabel": "Visit Desk365",
+      "linkNote": "desk365.io",
+      "facts": [
+        { "k": "Company", "v": "Desk365" },
+        { "k": "Period", "v": "May - Jul 2026" },
+        { "k": "Role", "v": "Product Manager" },
+        { "k": "Artefacts", "v": "PRD, user stories, Jira" }
+      ],
+      "tags": ["PRD", "Shipped", "Jira"]
+    },
+    {
+      "slug": "support-portals",
+      "title": "Multiple Support Portals",
+      "kind": "B2B SaaS - Shipped at Desk365",
+      "badge": "Shipped at Desk365",
+      "cover": "assets/img/software-portals.svg",
+      "colour": "lilac",
+      "summary": "One workspace that lets an organisation run support for several brands - without splitting the team or buying a second helpdesk.",
+      "cardDesc": "One workspace that runs support for several brands without splitting the team.",
+      "problem": "Companies that support more than one brand were forced to choose: run everything through a single generic portal, or pay for separate helpdesk instances and fragment the agent experience.",
+      "shipped": [
+        "Multiple customer-facing portals, each with its own branding",
+        "A single agent workspace across all portals",
+        "Per-portal routing and configuration",
+        "Clear separation of what customers see from how agents work"
+      ],
+      "role": "Led the feature: framed the multi-brand use case, defined requirements and user stories, and worked with Engineering, Design and QA to prioritise scope and validate the release.",
+      "link": "https://www.desk365.io/",
+      "linkLabel": "Visit Desk365",
+      "linkNote": "desk365.io",
+      "facts": [
+        { "k": "Company", "v": "Desk365" },
+        { "k": "Period", "v": "May - Jul 2026" },
+        { "k": "Role", "v": "Product Manager" },
+        { "k": "Artefacts", "v": "PRD, user stories, Jira" }
+      ],
+      "tags": ["PRD", "Shipped", "Multi-brand"]
+    }
+  ],
+
+  "decks": [
+    {
+      "title": "Flipkart - Minds in Motion",
+      "badge": "National 2nd runner up",
+      "cover": "assets/img/work-flipkart.svg",
+      "desc": "2nd runner-up among 1000+ teams. Reimagining Flipkart for Gen Z in a discovery-driven world: a 3-lever system of creator-led shopping, AI discovery and community trust, with a 3-phase GTM and 15+ prioritised features.",
+      "file": "assets/decks/flipkart-minds-in-motion.pdf"
+    },
+    {
+      "title": "Chanakyaneeti - Premium EV",
+      "badge": "National finalist - top 5",
+      "cover": "assets/img/deck-ev.svg",
+      "desc": "Top 5 among 500+ teams at Shaastra 2026. Market-entry and GTM strategy for a premium EV brand in India - market sizing, charging-infrastructure readiness and a 3-year roadmap.",
+      "file": "assets/decks/chanakyaneeti-premium-ev.pdf"
+    },
+    {
+      "title": "RIVA - AI Hyperlocal Travel",
+      "badge": "GTM roadmap",
+      "cover": "assets/img/work-riva.svg",
+      "desc": "An 18-month GTM roadmap for an AI travel companion: market sizing, six traveller personas, pricing and acquisition channels.",
+      "file": "assets/decks/riva-gtm-deck.pdf"
+    },
+    {
+      "title": "Launchpad Alpha - Mutual Funds",
+      "badge": "Fintech strategy",
+      "cover": "assets/img/deck-launchpad.svg",
+      "desc": "Reimagining mutual fund asset management in India. Competitive benchmarking across SBI, ICICI Prudential, Monarch Networth and Angel One, then a positioning and product play.",
+      "file": "assets/decks/launchpad-alpha-mutual-funds.pdf"
+    },
+    {
+      "title": "Runna - ProdWiz 6.0",
+      "badge": "Product case",
+      "cover": "assets/img/deck-runna.svg",
+      "desc": "A growth and monetisation teardown of the Runna training app - freemium plans, subscription tiers, race partnerships and brand collaborations.",
+      "file": "assets/decks/runna-prodwiz-6.pdf"
+    },
+    {
+      "title": "Bringing Boredom Back",
+      "badge": "Product case",
+      "cover": "assets/img/deck-supercoins.svg",
+      "desc": "A product designed to make space for 'aha' moments again - turning mindless scrolling into mindful rewards through the untapped value of SuperCoins.",
+      "file": "assets/decks/flipkart-supercoins-boredom.pdf"
+    },
+    {
+      "title": "Spotify - Focus Teardown",
+      "badge": "Problem framing",
+      "cover": "assets/img/deck-spotify.svg",
+      "desc": "Journey mapping the study-and-focus listener: a cluttered homepage, too much choice at the moment of intent, and no signal that the session actually helped.",
+      "file": "assets/decks/spotify-focus-teardown.pdf"
+    },
+    {
+      "title": "Swiggy - Group Ordering",
+      "badge": "One-pager",
+      "cover": "assets/img/deck-swiggy.svg",
+      "desc": "A shared live cart so everyone orders independently and payment splits itself - cutting a 15-30 minute manual flow to under 5 minutes, with KPIs and trade-offs on one page.",
+      "file": "assets/decks/swiggy-group-ordering-one-pager.pdf"
+    }
+  ],
+
+  "wireframes": {
+    "built": [
+      { "title": "Wireframe set 01", "badge": "Desktop flow", "desc": "Add the title, the flow it covers and a one-line note on the decision it resolved.", "image": "assets/img/wireframe-placeholder.svg" },
+      { "title": "Wireframe set 02", "badge": "Desktop flow", "desc": "Add the title, the flow it covers and a one-line note on the decision it resolved.", "image": "assets/img/wireframe-placeholder.svg" },
+      { "title": "Wireframe set 03", "badge": "Mobile flow", "desc": "Add the title, the flow it covers and a one-line note on the decision it resolved.", "image": "assets/img/wireframe-placeholder.svg" }
+    ],
+    "sketches": [
+      {
+        "title": "Billing Software",
+        "badge": "7 sheets",
+        "desc": "Hand-drawn spec for the billing tool: balance and part-payments, salary advances, the 58mm printed bill template, plus profiles, bill logs, contacts, orders and licences.",
+        "image": "assets/img/sketch-billing.png",
+        "file": "assets/wireframes/billing-software-sketches.pdf"
+      },
+      {
+        "title": "This Portfolio",
+        "badge": "6 sheets",
+        "desc": "The sketches this site was built from - hero and animated portrait, three product cards, the flowing projects section, the scroll-drawn experience timeline, and the deck, wireframe and software pages.",
+        "image": "assets/img/sketch-portfolio.png",
+        "file": "assets/wireframes/portfolio-website-sketches.pdf"
+      }
+    ]
+  },
+
+  "experience": [
+    {
+      "role": "Product Manager",
+      "org": "Desk365",
+      "from": "May 2026",
+      "to": "Jul 2026",
+      "text": "Led end-to-end delivery of Audit Logs, Multiple Support Portals and Empty State UX. Owned requirements, PRDs and user stories, and worked with Engineering, Design and QA to prioritise features, validate releases and ship quality launches.",
+      "tags": ["PRDs", "Jira", "Delivery", "Cross-functional"]
+    },
+    {
+      "role": "UI/UX Intern",
+      "org": "Hextasy.in",
+      "from": "May 2025",
+      "to": "Jul 2025",
+      "text": "Improved product usability by 50% through user-centric design, prototyping and data-driven UX work. Defined user flows and wireframes that translated user needs and business goals into scalable product experiences.",
+      "tags": ["Figma", "Wireframing", "Prototyping", "UX research"]
+    },
+    {
+      "role": "Creatives & Design Core",
+      "org": "Shaastra, IIT Madras",
+      "from": "Mar 2025",
+      "to": "Feb 2026",
+      "text": "Led a four-tier team of 80+ students for India's largest student-run technical fest (50k+ footfall). Trained 40+ coordinators, managed a ₹3L+ equipment budget and ran a media campaign that grew social reach by 40%.",
+      "tags": ["Leadership", "Campaigns", "Team of 80+", "₹3L+ budget"]
+    },
+    {
+      "role": "Student Relations Coordinator",
+      "org": "Saarang, IIT Madras",
+      "from": "Jul 2024",
+      "to": "Jan 2025",
+      "text": "Led nationwide outreach for Asia's largest student-run fest, engaging 600+ participants and contributing to an 8% revenue increase on a ₹2 Cr budget. Pioneered Imprints, recruiting 400+ student representatives.",
+      "tags": ["Outreach", "Growth", "₹2 Cr budget"]
+    }
+  ],
+
+  "stats": [
+    { "value": "80", "prefix": "", "suffix": "+", "label": "Students led" },
+    { "value": "40", "prefix": "", "suffix": "+", "label": "Coordinators trained" },
+    { "value": "3", "prefix": "₹", "suffix": "L+", "label": "Budget managed" },
+    { "value": "15", "prefix": "", "suffix": "+", "label": "Product features" }
+  ]
+}

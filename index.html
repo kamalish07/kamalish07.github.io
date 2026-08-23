@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kamalish - Product Manager &amp; Design Thinker</title>
+<meta name="description" content="Kamalish Muthukumar - product manager at IIT Madras working at the intersection of product strategy, user experience and visual storytelling." />
+<meta name="theme-color" content="#FF4E2B" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body data-page="home" data-root="">
+
+<a class="skip-link" href="#software">Skip to work</a>
+
+<header class="site-header" id="header">
+  <div class="shell header-inner">
+    <a class="brand" href="#home" aria-label="Kamalish - home">
+      <span class="brand__mark">KM</span>
+      <span class="brand__name">Kamalish<em>Product &amp; Design</em></span>
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      <a href="#projects" class="nav__link">Projects</a>
+      <a href="#experience" class="nav__link">Experience</a>
+      <a href="#resume" class="nav__link">Resume</a>
+    </nav>
+
+    <div class="header-actions">
+      <a class="icon-btn icon-btn--blue" data-bind="linkedin" href="#" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C20.3 8.65 21 10.9 21 14v7h-4v-6.2c0-1.48-.03-3.4-2.07-3.4-2.08 0-2.4 1.62-2.4 3.3V21H9z"/></svg>
+      </a>
+      <a class="icon-btn icon-btn--yellow" data-bind="email" href="#" aria-label="Email">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 5h20v14H2zm2 2v.4l8 5 8-5V7z"/></svg>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-nav" id="mobileNav" hidden>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#resume">Resume</a>
+    <a href="#contact">Contact</a>
+  </div>
+</header>
+
+<p class="load-error" data-render-error hidden>
+  Content could not load. Run the site through a web server (not file://).
+</p>
+
+<main id="home">
+
+  <!-- ========================================================== HERO -->
+  <section class="hero">
+    <div class="shell hero__grid">
+      <div class="hero__left">
+        <p class="eyebrow reveal" data-reveal>
+          <span class="dot"></span> <span data-bind="eyebrowText"></span>
+        </p>
+
+        <h1 class="hero__name reveal" data-reveal data-reveal-delay="1">
+          <span class="word" data-bind="name"></span>
+        </h1>
+
+        <p class="hero__intro reveal" data-reveal data-reveal-delay="2">
+          <strong data-bind="headline"></strong>
+          <span data-bind="intro"></span>
+        </p>
+
+        <div class="hero__cta reveal" data-reveal data-reveal-delay="3">
+          <a class="btn btn--coral" href="#software">
+            <span class="btn__icon" aria-hidden="true">&#9656;</span> See the work
+          </a>
+          <a class="btn btn--ghost" data-bind="resume" href="#" download>Download resume</a>
+        </div>
+      </div>
+
+      <div class="hero__right">
+        <div class="portrait" data-tilt>
+          <div class="portrait__blob" aria-hidden="true"></div>
+          <div class="portrait__frame">
+            <img data-bind="portrait" src="" alt="" width="520" height="560" />
+            <div class="portrait__grain" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================== SELECTED SOFTWARE -->
+  <section class="section products" id="software">
+    <div class="shell">
+      <div class="section-head">
+        <h2 class="section-title reveal" data-reveal>Selected<br />software</h2>
+        <p class="section-note reveal" data-reveal data-reveal-delay="1">
+          Products I helped shape end to end - scope, flows and the decisions
+          that actually shipped. Open one for the full story and a live link.
+        </p>
+      </div>
+      <div class="cards" data-list="software"></div>
+    </div>
+  </section>
+
+  <!-- ===================================================== WHAT I DO -->
+  <section class="section caps" id="about">
+    <div class="shell">
+      <div class="section-head">
+        <h2 class="section-title reveal" data-reveal>What<br />I do</h2>
+        <p class="section-note reveal" data-reveal data-reveal-delay="1">
+          Four things I keep coming back to, and the tools I use to do them.
+        </p>
+      </div>
+      <ul class="caps__grid" data-list="capabilities"></ul>
+      <div class="toolbelt reveal" data-reveal>
+        <span class="toolbelt__label">Toolkit</span>
+        <ul class="toolbelt__list" data-list="toolkit"></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================== PROJECTS FLOW -->
+  <section class="section flow" id="projects">
+    <div class="shell">
+      <div class="section-head section-head--center">
+        <h2 class="section-title reveal" data-reveal>Projects</h2>
+        <p class="section-note reveal" data-reveal data-reveal-delay="1">
+          Everything lives in three buckets. Follow the line.
+        </p>
+      </div>
+    </div>
+
+    <div class="flow__stage" id="flowStage">
+      <svg class="flow__line" viewBox="0 0 1200 1800" preserveAspectRatio="none" aria-hidden="true">
+        <path id="flowPath"
+              d="M 320 60 C 980 240, 980 400, 300 620 C -80 760, 1080 900, 900 1160 C 760 1380, 220 1360, 300 1720"
+              fill="none" stroke="var(--ink)" stroke-width="6" stroke-linecap="round" />
+      </svg>
+
+      <div class="shell flow__items">
+        <a class="blob blob--coral blob--left reveal" data-reveal href="work/product-decks/">
+          <span class="blob__index">01</span>
+          <span class="blob__title">Case<br />Studies</span>
+          <span class="blob__meta">Strategy, GTM and case competition decks</span>
+          <span class="blob__go" aria-hidden="true">&rarr;</span>
+        </a>
+        <a class="blob blob--blue blob--right reveal" data-reveal href="work/wireframes/">
+          <span class="blob__index">02</span>
+          <span class="blob__title">Wire<br />frames</span>
+          <span class="blob__meta">Built screens and rough sketches</span>
+          <span class="blob__go" aria-hidden="true">&rarr;</span>
+        </a>
+        <a class="blob blob--yellow blob--left reveal" data-reveal href="work/software/">
+          <span class="blob__index">03</span>
+          <span class="blob__title">Soft<br />ware</span>
+          <span class="blob__meta">Shipped products, with live links</span>
+          <span class="blob__go" aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================= EXPERIENCE -->
+  <section class="section exp" id="experience">
+    <div class="shell">
+      <div class="section-head">
+        <h2 class="section-title reveal" data-reveal>Experience</h2>
+        <p class="section-note reveal" data-reveal data-reveal-delay="1">
+          Product delivery, user experience and creative leadership across
+          SaaS, design studios and India's largest student-run technical fest.
+        </p>
+      </div>
+
+      <div class="timeline" id="timeline">
+        <div class="timeline__rail" aria-hidden="true"><i id="timelineFill"></i></div>
+        <div data-list="experience"></div>
+      </div>
+
+      <ul class="stats" data-list="stats"></ul>
+    </div>
+  </section>
+
+  <!-- ============================================================= RESUME -->
+  <section class="section resume" id="resume">
+    <div class="shell">
+      <div class="resume__box reveal" data-reveal>
+        <div class="resume__text">
+          <h2>Want the one-pager?</h2>
+          <p>Roles, tools, outcomes and coursework - condensed onto a single page.</p>
+        </div>
+        <a class="btn btn--dark btn--lg" data-bind="resume" href="#" download>
+          <span class="btn__icon" aria-hidden="true">&darr;</span> Download resume
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer" id="contact">
+  <div class="shell">
+    <div class="footer__top">
+      <h2 class="footer__shout" data-bind="footerShout"></h2>
+    </div>
+
+    <div class="footer__cols">
+      <div class="footer__col">
+        <h3>Projects</h3>
+        <a href="work/product-decks/">Case Studies</a>
+        <a href="work/wireframes/">Wireframes</a>
+        <a href="work/software/">Software</a>
+      </div>
+      <div class="footer__col">
+        <h3>Site</h3>
+        <a href="#software">Selected software</a>
+        <a href="#experience">Experience</a>
+        <a href="#resume">Resume</a>
+      </div>
+      <div class="footer__col">
+        <h3>Contact</h3>
+        <a data-bind="email" data-bind-text href="#"></a>
+        <a data-bind="phone" data-bind-text href="#"></a>
+        <a data-bind="linkedin" href="#" target="_blank" rel="noopener">LinkedIn &#8599;</a>
+      </div>
+    </div>
+
+    <div class="footer__base">
+      <span>&copy; 2026 Kamalish Muthukumar</span>
+      <span>Built with intent &middot; IIT Madras</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/content.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 440" width="600" height="440" role="img" aria-label="Attention, boredom and reward loop concept">
+  <rect width="600" height="440" fill="#FFD52E"/>
+
+  <!-- scattered feed cards being escaped -->
+  <g stroke="#12100E" stroke-width="5">
+    <rect x="40" y="60" width="120" height="86" rx="12" fill="#FFF4E0" transform="rotate(-9 100 103)"/>
+    <rect x="46" y="176" width="120" height="86" rx="12" fill="#FF7BAC" transform="rotate(5 106 219)"/>
+    <rect x="38" y="292" width="120" height="86" rx="12" fill="#C9A7FF" transform="rotate(-6 98 335)"/>
+  </g>
+
+  <!-- brain / pause -->
+  <circle cx="330" cy="210" r="96" fill="#FFF4E0" stroke="#12100E" stroke-width="6"/>
+  <rect x="300" y="172" width="20" height="76" rx="6" fill="#12100E"/>
+  <rect x="340" y="172" width="20" height="76" rx="6" fill="#12100E"/>
+  <text x="330" y="336" font-family="Arial Black, Arial, sans-serif" font-size="20" fill="#12100E" text-anchor="middle">PAUSE</text>
+
+  <!-- coin reward -->
+  <g>
+    <circle cx="497" cy="130" r="54" fill="#FF4E2B" stroke="#12100E" stroke-width="6"/>
+    <circle cx="497" cy="130" r="34" fill="#FFD52E" stroke="#12100E" stroke-width="4"/>
+    <text x="497" y="141" font-family="Arial Black, Arial, sans-serif" font-size="26" fill="#12100E" text-anchor="middle">C</text>
+  </g>
+  <path d="M424 196 C468 244, 470 288, 452 330" fill="none" stroke="#12100E" stroke-width="6"
+        stroke-linecap="round" stroke-dasharray="14 12"/>
+  <circle cx="452" cy="342" r="14" fill="#46E39B" stroke="#12100E" stroke-width="5"/>
+</svg>

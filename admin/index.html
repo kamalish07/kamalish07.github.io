@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Content editor - Kamalish</title>
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml" />
+<link rel="stylesheet" href="../assets/css/style.css" />
+<!-- ../admin/ (not ./) so these resolve whether the URL is /admin or /admin/ -->
+<link rel="stylesheet" href="../admin/admin.css" />
+</head>
+<body data-root="../">
+
+<header class="adm-bar">
+  <div class="adm-bar__in">
+    <span class="adm-logo">CMS</span>
+    <strong class="adm-title">Portfolio content editor</strong>
+    <span class="adm-dirty" id="dirty" hidden>unsaved changes</span>
+    <div class="adm-bar__actions">
+      <button class="btn btn--ghost" id="btnReload" type="button">Discard</button>
+      <button class="btn btn--ghost" id="btnFolder" type="button">Connect project folder</button>
+      <button class="btn btn--yellow" id="btnPreview" type="button">Save &amp; preview</button>
+      <button class="btn btn--mint" id="btnSaveProject" type="button" disabled>Save to project</button>
+      <button class="btn btn--coral" id="btnDownload" type="button">Download site.json</button>
+    </div>
+  </div>
+</header>
+
+<div class="adm-note">
+  <p>
+    <b>One-time setup:</b> hit <b>Connect project folder</b> and pick the
+    <code>Themed Portfolio - Final</code> folder. After that it is remembered -
+    edits save themselves into <code>content/site.json</code>, and uploaded PDFs and
+    images are copied into <code>assets/</code>. All you do is
+    <code>git add . &amp;&amp; git commit &amp;&amp; git push</code>.
+  </p>
+  <p style="margin-top:8px">
+    No folder connected? Everything still works: <b>Save &amp; preview</b> keeps a draft in
+    this browser and <b>Download site.json</b> gives you the file to drop in yourself.
+    Folder access needs Chrome or Edge.
+  </p>
+</div>
+
+<main class="adm-wrap">
+  <nav class="adm-nav" id="admNav" aria-label="Sections"></nav>
+  <div class="adm-panes" id="admPanes"></div>
+</main>
+
+<script src="../admin/admin.js"></script>
+</body>
+</html>
