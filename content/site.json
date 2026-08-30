@@ -110,6 +110,20 @@
 
   "decks": [
     {
+      "title": "Archy, Second Time Right",
+      "badge": "Olympus'26 - IIM Calcutta",
+      "cover": "assets/img/deck-archy.svg",
+      "desc": "A gated scale-up strategy for ArchIQ - solving McDonald's drive-thru AI failure with conditional franchise economics and robust fallback mechanisms.",
+      "file": "assets/decks/archy-second-time-right.pdf"
+    },
+    {
+      "title": "AI Reinvention Made Real",
+      "badge": "Accenture Innovation Challenge",
+      "cover": "assets/img/deck-accenture.svg",
+      "desc": "PatientTriage.ai - an end-to-end, human-in-the-loop platform augmenting clinical judgment to optimally prioritize and route patients in Emergency Departments.",
+      "file": "assets/decks/accenture-innovation-challenge.pdf"
+    },
+    {
       "title": "Flipkart - Minds in Motion",
       "badge": "National 2nd runner up",
       "cover": "assets/img/work-flipkart.svg",
@@ -122,27 +136,6 @@
       "cover": "assets/img/deck-ev.svg",
       "desc": "Top 5 among 500+ teams at Shaastra 2026. Market-entry and GTM strategy for a premium EV brand in India - market sizing, charging-infrastructure readiness and a 3-year roadmap.",
       "file": "assets/decks/chanakyaneeti-premium-ev.pdf"
-    },
-    {
-      "title": "RIVA - AI Hyperlocal Travel",
-      "badge": "GTM roadmap",
-      "cover": "assets/img/work-riva.svg",
-      "desc": "An 18-month GTM roadmap for an AI travel companion: market sizing, six traveller personas, pricing and acquisition channels.",
-      "file": "assets/decks/riva-gtm-deck.pdf"
-    },
-    {
-      "title": "Launchpad Alpha - Mutual Funds",
-      "badge": "Fintech strategy",
-      "cover": "assets/img/deck-launchpad.svg",
-      "desc": "Reimagining mutual fund asset management in India. Competitive benchmarking across SBI, ICICI Prudential, Monarch Networth and Angel One, then a positioning and product play.",
-      "file": "assets/decks/launchpad-alpha-mutual-funds.pdf"
-    },
-    {
-      "title": "Runna - ProdWiz 6.0",
-      "badge": "Product case",
-      "cover": "assets/img/deck-runna.svg",
-      "desc": "A growth and monetisation teardown of the Runna training app - freemium plans, subscription tiers, race partnerships and brand collaborations.",
-      "file": "assets/decks/runna-prodwiz-6.pdf"
     },
     {
       "title": "Bringing Boredom Back",

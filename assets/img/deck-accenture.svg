@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 440" width="600" height="440" role="img" aria-label="Accenture Innovation case study">
+  <rect width="600" height="440" fill="#2F5FFF"/>
+  <g opacity=".35" stroke="#12100E" stroke-width="3"><path d="M0 120 H600 M0 240 H600 M0 360 H600"/></g>
+  <!-- pulse / medical cross -->
+  <path d="M 150 220 L 220 220 L 260 140 L 320 320 L 370 220 L 450 220" fill="none" stroke="#FFF4E0" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="420" y="80" width="80" height="80" rx="10" fill="#46E39B" stroke="#12100E" stroke-width="6"/>
+  <path d="M 440 120 h 40 M 460 100 v 40" stroke="#12100E" stroke-width="8" stroke-linecap="round"/>
+</svg>

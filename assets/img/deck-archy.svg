@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 440" width="600" height="440" role="img" aria-label="Archy McDonald's case study">
+  <rect width="600" height="440" fill="#FF4E2B"/>
+  <g opacity=".35" stroke="#12100E" stroke-width="3"><path d="M0 120 H600 M0 240 H600 M0 360 H600"/></g>
+  <!-- arches / fast food concept -->
+  <path d="M 200 320 C 200 150, 300 150, 300 320 C 300 150, 400 150, 400 320" fill="none" stroke="#FFD52E" stroke-width="40" stroke-linecap="round"/>
+</svg>
