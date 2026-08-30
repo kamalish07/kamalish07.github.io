@@ -73,7 +73,7 @@
       "facts": [
         { "k": "Company", "v": "Desk365" },
         { "k": "Period", "v": "May - Jul 2026" },
-        { "k": "Role", "v": "Product Manager" },
+        { "k": "Role", "v": "Product Management Intern" },
         { "k": "Artefacts", "v": "PRD, user stories, Jira" }
       ],
       "tags": ["PRD", "Shipped", "Jira"]
@@ -101,7 +101,7 @@
       "facts": [
         { "k": "Company", "v": "Desk365" },
         { "k": "Period", "v": "May - Jul 2026" },
-        { "k": "Role", "v": "Product Manager" },
+        { "k": "Role", "v": "Product Management Intern" },
         { "k": "Artefacts", "v": "PRD, user stories, Jira" }
       ],
       "tags": ["PRD", "Shipped", "Multi-brand"]
@@ -186,7 +186,7 @@
 
   "experience": [
     {
-      "role": "Product Manager",
+      "role": "Product Management Intern",
       "org": "Desk365",
       "from": "May 2026",
       "to": "Jul 2026",
