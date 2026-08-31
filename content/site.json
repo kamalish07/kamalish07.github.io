@@ -26,29 +26,54 @@
     {
       "slug": "billing",
       "title": "Billing Software",
-      "kind": "Web app - Billing",
+      "kind": "Full-Stack Billing & Payroll Platform",
       "badge": "Web app",
       "cover": "assets/img/software-billing.svg",
       "colour": "yellow",
-      "summary": "An invoicing and billing tool built so a small team can raise a bill, track what is owed and close the loop on payment without living in a spreadsheet.",
-      "cardDesc": "Invoicing and billing built so a small team can raise, track and settle bills without a spreadsheet.",
-      "problem": "Small teams bill in spreadsheets and messaging apps. Invoice numbers drift, totals get recalculated by hand, and nobody can answer \"what is still unpaid?\" without opening three files.",
+      "summary": "Led end-to-end billing & payroll product development, streamlining 3+ workflows across invoicing, payroll and reporting.",
+      "cardDesc": "Led end-to-end billing & payroll product development, streamlining 3+ workflows.",
+      "problem": "Billing workflows were fragmented, causing pain points in invoicing, payroll and reporting that reduced overall efficiency.",
       "shipped": [
-        "Create and send invoices from a reusable line-item template",
-        "Automatic numbering, tax and total calculation",
-        "Payment status tracking - draft, sent, paid, overdue",
-        "A dashboard showing outstanding versus collected"
+        "Identified 10+ pain points across billing workflows, translating insights into requirements",
+        "Defined and prioritized 15+ features across invoicing, payroll and reporting",
+        "Improved workflow efficiency by 30%"
       ],
-      "role": "Scoped the product, defined the data model and the invoice lifecycle, designed the screens, and worked through the edge cases that usually break billing tools: partial payments, edits after sending, and cancelled invoices.",
-      "link": "",
-      "linkLabel": "Visit the site",
-      "linkNote": "link to be added",
+      "role": "Led end-to-end billing & payroll product development.",
+      "link": "#",
+      "linkLabel": "View Project",
+      "linkNote": "",
       "facts": [
         { "k": "Type", "v": "Web application" },
-        { "k": "Focus", "v": "Invoicing & payments" },
-        { "k": "Role", "v": "Product & design" }
+        { "k": "Focus", "v": "Invoicing & Payroll" },
+        { "k": "Role", "v": "Product Development" }
       ],
-      "tags": ["Web app", "Billing", "Product"]
+      "tags": ["Web app", "Billing", "Payroll"]
+    },
+    {
+      "slug": "kiro",
+      "title": "Kiro",
+      "kind": "Daily Planner & Academic Organizer",
+      "badge": "Productivity",
+      "cover": "assets/img/wireframe-placeholder.svg", 
+      "colour": "mint",
+      "summary": "Owned product vision & end-to-end delivery of academic planner, consolidating 4 core modules into a unified experience.",
+      "cardDesc": "Owned product vision & end-to-end delivery of academic planner.",
+      "problem": "Students struggle to manage academics, planning, tracking, and reminders across multiple disconnected apps.",
+      "shipped": [
+        "Conducted user research and prioritized 10+ features around planning, tracking, reminders & academic workflows",
+        "Designed 100% offline-first experience with cross-device sync",
+        "Reduced dependency on connectivity for planning"
+      ],
+      "role": "Owned product vision & end-to-end delivery of the academic planner.",
+      "link": "#",
+      "linkLabel": "View Project",
+      "linkNote": "",
+      "facts": [
+        { "k": "Type", "v": "Productivity Tool" },
+        { "k": "Focus", "v": "Academic Organizer" },
+        { "k": "Role", "v": "Product Owner" }
+      ],
+      "tags": ["Planner", "Offline-first", "Productivity"]
     },
     {
       "slug": "audit-logs",
