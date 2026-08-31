@@ -39,9 +39,9 @@
         "Improved workflow efficiency by 30%"
       ],
       "role": "Led end-to-end billing & payroll product development.",
-      "link": "#",
+      "link": "https://billing-software-demo-beta.vercel.app/",
       "linkLabel": "View Project",
-      "linkNote": "",
+      "linkNote": "Live demo",
       "facts": [
         { "k": "Type", "v": "Web application" },
         { "k": "Focus", "v": "Invoicing & Payroll" },
@@ -65,9 +65,9 @@
         "Reduced dependency on connectivity for planning"
       ],
       "role": "Owned product vision & end-to-end delivery of the academic planner.",
-      "link": "#",
+      "link": "https://kiro-demo-inky.vercel.app/",
       "linkLabel": "View Project",
-      "linkNote": "",
+      "linkNote": "Live demo",
       "facts": [
         { "k": "Type", "v": "Productivity Tool" },
         { "k": "Focus", "v": "Academic Organizer" },
