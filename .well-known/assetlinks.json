@@ -1,0 +1,10 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "io.github.kamalish07.focus",
+      "sha256_cert_fingerprints": ["F8:1B:67:41:F5:F9:98:DF:86:CF:39:37:0F:F4:C7:78:F1:A1:CC:A1:46:9A:40:AB:0B:22:7A:29:ED:B9:6F:0E"]
+    }
+  }
+]
