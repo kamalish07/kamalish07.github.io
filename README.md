@@ -58,7 +58,7 @@ Adding software needs no new HTML file - every product renders through
 
 ```
 /                                 home
-/work/product-decks/              deck grid
+/work/case-studies/               deck grid
 /work/wireframes/                 built wireframes + rough sketches
 /work/software/                   software list
 /work/software/item.html#<slug>   any software detail page
