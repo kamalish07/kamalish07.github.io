@@ -137,6 +137,20 @@
 
   "decks": [
     {
+      "title": "Urban Company - Repeat-Job Leakage",
+      "badge": "Product Case Study",
+      "cover": "assets/img/deck-urban-company.svg",
+      "desc": "Tackling ~₹300 Cr off-app repeat leakage in AC and cleaning. Designed ProLoop: 1-tap same-pro rebooking, visible warranty cover, and tiered repeat commissions breaking even below 25% leakage.",
+      "file": "assets/decks/urban-company-repeat-job-leakage.pdf"
+    },
+    {
+      "title": "Meesho - Valmo RTO Optimization",
+      "badge": "DiCE Challenge S3",
+      "cover": "assets/img/deck-valmo.svg",
+      "desc": "Diagnosed Valmo's ₹2,567 Cr COD-RTO cost pool via 3 hub visits, 35 buyer surveys and 3,000 reviews. Scored 10 root-cause hypotheses to design a reason-led recovery ladder saving ~₹160 Cr/yr per 1% RTO reduction.",
+      "file": "assets/decks/valmo-rto-optimization.pdf"
+    },
+    {
       "title": "Archy, Second Time Right",
       "badge": "Olympus'26 - IIM Calcutta",
       "cover": "assets/img/deck-archy.svg",

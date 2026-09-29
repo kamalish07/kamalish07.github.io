@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 440" width="600" height="440" role="img" aria-label="Urban Company ProLoop case study">
+  <rect width="600" height="440" fill="#1C1438"/>
+  <g opacity=".25" stroke="#FFF4E0" stroke-width="2.5">
+    <path d="M0 110 H600 M0 220 H600 M0 330 H600 M150 0 V440 M300 0 V440 M450 0 V440"/>
+  </g>
+
+  <!-- Title Pill -->
+  <rect x="36" y="34" width="200" height="40" rx="20" fill="#FFF4E0" stroke="#12100E" stroke-width="4"/>
+  <text x="136" y="60" font-family="'Space Mono', monospace" font-size="13" font-weight="700" fill="#12100E" text-anchor="middle">URBAN COMPANY</text>
+
+  <!-- Metric Badge -->
+  <rect x="380" y="34" width="184" height="40" rx="20" fill="#46E39B" stroke="#12100E" stroke-width="4"/>
+  <text x="472" y="60" font-family="'Space Mono', monospace" font-size="13" font-weight="700" fill="#12100E" text-anchor="middle">~₹300 Cr LEAKAGE</text>
+
+  <!-- Center Rebook App Card -->
+  <g stroke="#12100E" stroke-width="5">
+    <rect x="70" y="104" width="270" height="290" rx="22" fill="#FFF4E0"/>
+    <!-- Card header -->
+    <rect x="94" y="132" width="222" height="52" rx="14" fill="#C9A7FF"/>
+  </g>
+  <text x="110" y="156" font-family="Arial Black, Arial, sans-serif" font-size="15" fill="#12100E">Ravi K · 4.9★</text>
+  <text x="110" y="174" font-family="'Space Mono', monospace" font-size="11" font-weight="700" fill="#12100E">AC Specialist (Saved Pro)</text>
+
+  <!-- Rebook Features Inside Card -->
+  <g stroke="#12100E" stroke-width="3.5">
+    <rect x="94" y="198" width="222" height="34" rx="10" fill="#FFFFFF"/>
+    <rect x="94" y="242" width="222" height="34" rx="10" fill="#FFFFFF"/>
+    <rect x="94" y="286" width="222" height="34" rx="10" fill="#FFFFFF"/>
+  </g>
+  <text x="110" y="220" font-family="'Space Mono', monospace" font-size="12" font-weight="700" fill="#12100E">✓ 1-Tap Same-Pro Rebook</text>
+  <text x="110" y="264" font-family="'Space Mono', monospace" font-size="12" font-weight="700" fill="#12100E">✓ Visible Warranty Cover</text>
+  <text x="110" y="308" font-family="'Space Mono', monospace" font-size="12" font-weight="700" fill="#12100E">✓ Tiered Fee: 25% → 18%</text>
+
+  <!-- Action CTA Button -->
+  <rect x="94" y="336" width="222" height="42" rx="12" fill="#FFD52E" stroke="#12100E" stroke-width="4"/>
+  <text x="205" y="362" font-family="Arial Black, Arial, sans-serif" font-size="13" fill="#12100E" text-anchor="middle">BOOK PROLOOP →</text>
+
+  <!-- Right Side Callout Elements -->
+  <!-- Breakeven Pill -->
+  <g transform="rotate(4 450 160)">
+    <rect x="360" y="120" width="190" height="110" rx="18" fill="#FF7BAC" stroke="#12100E" stroke-width="5"/>
+    <text x="455" y="156" font-family="Arial Black, Arial, sans-serif" font-size="28" fill="#12100E" text-anchor="middle">&lt;25%</text>
+    <text x="455" y="180" font-family="'Space Mono', monospace" font-size="11" font-weight="700" fill="#12100E" text-anchor="middle">BREAK-EVEN</text>
+    <text x="455" y="202" font-family="'Space Mono', monospace" font-size="10" fill="#12100E" text-anchor="middle">LEAKAGE THRESHOLD</text>
+  </g>
+
+  <!-- Impact Tag -->
+  <g transform="rotate(-5 460 300)">
+    <rect x="368" y="260" width="186" height="114" rx="18" fill="#FF4E2B" stroke="#12100E" stroke-width="5"/>
+    <text x="461" y="296" font-family="Arial Black, Arial, sans-serif" font-size="18" fill="#FFF4E0" text-anchor="middle">PROLOOP</text>
+    <text x="461" y="322" font-family="'Space Mono', monospace" font-size="11" font-weight="700" fill="#FFF4E0" text-anchor="middle">KEEP THE PRO,</text>
+    <text x="461" y="342" font-family="'Space Mono', monospace" font-size="11" font-weight="700" fill="#FFF4E0" text-anchor="middle">KEEP THE JOB</text>
+  </g>
+</svg>
