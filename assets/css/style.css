@@ -114,6 +114,7 @@ button{ font:inherit; color:inherit; }
 .btn--coral{ --btn-bg:var(--coral); color:var(--white); }
 .btn--yellow{ --btn-bg:var(--yellow); }
 .btn--mint{ --btn-bg:var(--mint); }
+.btn--blue{ --btn-bg:var(--blue); color:var(--white); }
 .btn:disabled{ cursor:not-allowed; }
 .btn:disabled:hover{ transform:none; box-shadow:var(--sh); }
 .btn--dark{ --btn-bg:var(--ink); color:var(--paper); box-shadow:6px 6px 0 var(--coral); }
