@@ -1,235 +1,253 @@
 /**
- * Kamalish Portfolio - Lightweight Privacy-Friendly Analytics Tracker
- * Automatically tracks page views, referrers, device types, and key conversions
- * (e.g. Resume downloads, Case Study deck views, live project demos).
+ * Kamalish Portfolio - shared traffic tracker
+ *
+ * Every visitor's browser increments public counters on a free, no-signup
+ * counter API (countapi.mileshilliard.com), so the /analytics/ dashboard
+ * sees traffic from everyone, not just the browser it is opened in.
+ *
+ * No cookies, no IP addresses, no personal data: only anonymous counts.
+ * Keys are listed in KamalishTrackerKeys so the dashboard can read them.
  */
-(function() {
+(function () {
   'use strict';
 
-  var STORAGE_KEY = 'kamalish_analytics_v1';
-  var GA_KEY = 'kamalish_ga4_id';
+  var API = 'https://countapi.mileshilliard.com/api/v1/';
+  var PREFIX = 'kamalish07_pf_';
 
-  // 1. Generate or retrieve persistent Visitor ID
-  var visitorId = localStorage.getItem('kamalish_vid');
-  if (!visitorId) {
-    visitorId = 'v_' + Math.random().toString(36).substring(2, 10) + Date.now().toString(36);
-    localStorage.setItem('kamalish_vid', visitorId);
+  // ----------------------------------------------------- shared definitions
+  var SOURCES = ['direct', 'linkedin', 'google', 'github', 'twitter', 'whatsapp',
+                 'instagram', 'facebook', 'bing', 'other'];
+  var DEVICES = ['desktop', 'mobile', 'tablet'];
+  var BROWSERS = ['chrome', 'safari', 'edge', 'firefox', 'samsung', 'opera', 'other'];
+  var REGIONS = ['india', 'usa_canada', 'uk', 'europe', 'middle_east',
+                 'singapore_sea', 'asia_other', 'australia_nz', 'other'];
+  var PAGES = ['home', 'case_studies', 'software', 'software_item', 'wireframes'];
+
+  function slug(s) {
+    return String(s || '').toLowerCase().replace(/\.pdf$/, '')
+      .replace(/[^a-z0-9]+/g, '_').replace(/^_+|_+$/g, '').slice(0, 48) || 'unknown';
   }
 
-  // 2. Session ID (expires when tab/browser closes)
-  var sessionId = sessionStorage.getItem('kamalish_sid');
-  var isNewSession = false;
-  if (!sessionId) {
-    sessionId = 's_' + Math.random().toString(36).substring(2, 9) + Date.now().toString(36);
-    sessionStorage.setItem('kamalish_sid', sessionId);
-    isNewSession = true;
-  }
-
-  // 3. Detect Device & Browser
-  function getDeviceType() {
-    var ua = navigator.userAgent || '';
-    if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) return 'Tablet';
-    if (/Mobile|iP(hone|od)|Android|BlackBerry|IEMobile|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/i.test(ua)) {
-      return 'Mobile';
-    }
-    return 'Desktop';
-  }
-
-  function getBrowser() {
-    var ua = navigator.userAgent;
-    if (ua.indexOf('Firefox') > -1) return 'Firefox';
-    if (ua.indexOf('SamsungBrowser') > -1) return 'Samsung Browser';
-    if (ua.indexOf('Opera') > -1 || ua.indexOf('OPR') > -1) return 'Opera';
-    if (ua.indexOf('Trident') > -1) return 'IE';
-    if (ua.indexOf('Edge') > -1 || ua.indexOf('Edg') > -1) return 'Edge';
-    if (ua.indexOf('Chrome') > -1) return 'Chrome';
-    if (ua.indexOf('Safari') > -1) return 'Safari';
-    return 'Other';
-  }
-
-  // 4. Normalize Referrer
-  function categorizeReferrer(ref) {
-    if (!ref) {
-      // Check UTM tags
-      var params = new URLSearchParams(window.location.search);
-      if (params.get('utm_source')) {
-        return params.get('utm_source').toUpperCase();
-      }
-      return 'Direct';
-    }
+  // Calendar day in IST, so the dashboard's days match the owner's clock.
+  function dayKey(date) {
+    var d = date || new Date();
     try {
-      var hostname = new URL(ref).hostname.toLowerCase();
-      if (hostname.indexOf('linkedin') > -1 || hostname.indexOf('lnkd.in') > -1) return 'LinkedIn';
-      if (hostname.indexOf('google') > -1) return 'Google';
-      if (hostname.indexOf('github') > -1) return 'GitHub';
-      if (hostname.indexOf('twitter') > -1 || hostname.indexOf('t.co') > -1 || hostname.indexOf('x.com') > -1) return 'Twitter / X';
-      if (hostname.indexOf('whatsapp') > -1) return 'WhatsApp';
-      if (hostname.indexOf('instagram') > -1) return 'Instagram';
-      if (hostname.indexOf('facebook') > -1) return 'Facebook';
-      if (hostname.indexOf(window.location.hostname) > -1) return 'Internal';
-      return hostname.replace(/^www\./, '');
+      return new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Kolkata' })
+        .format(d).replace(/-/g, '');
     } catch (e) {
-      return 'Direct';
+      return d.toISOString().slice(0, 10).replace(/-/g, '');
     }
   }
 
-  // 5. Data store access
-  function getAnalyticsData() {
+  // Exposed for the dashboard (it must read exactly what this file writes).
+  window.KamalishTrackerKeys = {
+    api: API, prefix: PREFIX, slug: slug, dayKey: dayKey,
+    sources: SOURCES, devices: DEVICES, browsers: BROWSERS,
+    regions: REGIONS, pages: PAGES
+  };
+
+  // ------------------------------------------------------------ guards
+  function store(kind) {
+    try { return window[kind]; } catch (e) { return null; }
+  }
+  function sget(kind, k) { try { return store(kind).getItem(k); } catch (e) { return null; } }
+  function sset(kind, k, v) { try { store(kind).setItem(k, v); } catch (e) {} }
+
+  var ua = navigator.userAgent || '';
+  var isBot = navigator.webdriver ||
+    /bot|crawl|spider|slurp|headless|lighthouse|pagespeed|preview|facebookexternalhit|embedly|quora link/i.test(ua);
+  var isOwner = sget('localStorage', 'kmpf_ignore') === '1';
+  var isLocal = /^(localhost|127\.0\.0\.1|\[::1\])$|\.localhost$|\.test$/.test(location.hostname) ||
+    location.protocol === 'file:';
+  // Local previews only count when explicitly opted in (for testing).
+  var allowLocal = sget('localStorage', 'kmpf_count_local') === '1';
+
+  var enabled = !isBot && !isOwner && (!isLocal || allowLocal);
+
+  function hit(key) {
+    if (!enabled) return;
+    var url = API + 'hit/' + PREFIX + key;
     try {
-      var raw = localStorage.getItem(STORAGE_KEY);
-      if (raw) return JSON.parse(raw);
+      if (window.fetch) {
+        fetch(url, { mode: 'cors', keepalive: true, cache: 'no-store' }).catch(function () {});
+      } else {
+        new Image().src = url;
+      }
     } catch (e) {}
-    return {
-      created: Date.now(),
-      pageviews: 0,
-      uniqueVisitors: {},
-      sessions: {},
-      pages: {},
-      referrers: {},
-      devices: { Desktop: 0, Mobile: 0, Tablet: 0 },
-      events: [],
-      history: [] // Last 100 log entries
-    };
   }
 
-  function saveAnalyticsData(data) {
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-      // Dispatch custom event for real-time dashboard updates
-      window.dispatchEvent(new CustomEvent('kamalish_analytics_update', { detail: data }));
-    } catch (e) {}
+  // ------------------------------------------------------- classifiers
+  function device() {
+    if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) return 'tablet';
+    if (/Mobi|iP(hone|od)|Android|BlackBerry|IEMobile|Opera M(obi|ini)/i.test(ua)) return 'mobile';
+    // iPadOS reports itself as Mac
+    if (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1) return 'tablet';
+    return 'desktop';
   }
 
-  // 6. Record Page View
+  function browser() {
+    if (/SamsungBrowser/.test(ua)) return 'samsung';
+    if (/OPR\/|Opera/.test(ua)) return 'opera';
+    if (/Edg\//.test(ua)) return 'edge';
+    if (/Firefox|FxiOS/.test(ua)) return 'firefox';
+    if (/Chrome|CriOS/.test(ua)) return 'chrome';
+    if (/Safari/.test(ua)) return 'safari';
+    return 'other';
+  }
+
+  function region() {
+    var tz = '';
+    try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) {}
+    if (/^Asia\/(Kolkata|Calcutta)$/.test(tz)) return 'india';
+    if (/^America\/|^Canada\/|^US\//.test(tz)) return 'usa_canada';
+    if (/^Europe\/(London|Belfast)$|^GB/.test(tz)) return 'uk';
+    if (/^Europe\//.test(tz)) return 'europe';
+    if (/^Asia\/(Dubai|Riyadh|Qatar|Bahrain|Kuwait|Muscat|Jerusalem|Tel_Aviv)$/.test(tz)) return 'middle_east';
+    if (/^Asia\/(Singapore|Kuala_Lumpur|Jakarta|Bangkok|Manila|Ho_Chi_Minh|Saigon)$/.test(tz)) return 'singapore_sea';
+    if (/^Asia\//.test(tz)) return 'asia_other';
+    if (/^Australia\/|^Pacific\/Auckland$/.test(tz)) return 'australia_nz';
+    return 'other';
+  }
+
+  function source() {
+    var params;
+    try { params = new URLSearchParams(location.search); } catch (e) { params = null; }
+    var utm = params && (params.get('utm_source') || params.get('ref') || params.get('source'));
+    var ref = sget('sessionStorage', 'kmpf_ref');   // set by redirect pages
+    if (ref === null) ref = document.referrer || '';
+    var host = '';
+    if (utm) {
+      host = String(utm).toLowerCase();
+    } else if (ref) {
+      try { host = new URL(ref).hostname.toLowerCase(); } catch (e) { host = ''; }
+      if (host === location.hostname) host = '';
+    }
+    if (!host) return 'direct';
+    if (/linkedin|lnkd\.in/.test(host)) return 'linkedin';
+    if (/google/.test(host)) return 'google';
+    if (/github/.test(host)) return 'github';
+    if (/twitter|^t\.co$|x\.com/.test(host)) return 'twitter';
+    if (/whatsapp|wa\.me/.test(host)) return 'whatsapp';
+    if (/instagram/.test(host)) return 'instagram';
+    if (/facebook|fb\.com|^fb$/.test(host)) return 'facebook';
+    if (/bing|duckduckgo|yahoo/.test(host)) return 'bing';
+    return 'other';
+  }
+
+  function pageName() {
+    var p = location.pathname.replace(/index\.html$/, '');
+    if (/\/analytics\/?$/.test(p) || /\/admin\/?$/.test(p)) return null;
+    if (/\/work\/case-studies\/?$/.test(p)) return 'case_studies';
+    if (/\/work\/software\/item(\.html)?$/.test(p)) return 'software_item';
+    if (/\/work\/software\/?$/.test(p)) return 'software';
+    if (/\/work\/wireframes\/?$/.test(p)) return 'wireframes';
+    if (/\/$/.test(p) && !/\/work\//.test(p)) return 'home';
+    return null;
+  }
+
+  function softwareSlug() {
+    var s = '';
+    try {
+      s = decodeURIComponent((location.hash || '').replace(/^#/, '')) ||
+          new URLSearchParams(location.search).get('s') || '';
+    } catch (e) {}
+    return s ? slug(s) : '';
+  }
+
+  // ---------------------------------------------------------- pageview
   function trackPageView() {
-    var path = window.location.pathname || '/';
-    // Normalize path for GitHub Pages
-    if (path.indexOf('index.html') > -1) path = path.replace('index.html', '');
-    if (path.length > 1 && path.endsWith('/')) path = path.slice(0, -1);
-    if (!path) path = '/';
+    var page = pageName();
+    if (!page) return;
+    var today = dayKey();
 
-    var referrer = categorizeReferrer(document.referrer);
-    var device = getDeviceType();
-    var browser = getBrowser();
-    var title = document.title || 'Kamalish Portfolio';
+    hit('pv_total');
+    hit('pv_day_' + today);
+    hit('page_' + page);
 
-    var data = getAnalyticsData();
-    data.pageviews = (data.pageviews || 0) + 1;
-    data.uniqueVisitors[visitorId] = (data.uniqueVisitors[visitorId] || 0) + 1;
-    data.sessions[sessionId] = (data.sessions[sessionId] || 0) + 1;
+    // Unique visitor (ever) and unique visitor per day
+    if (!sget('localStorage', 'kmpf_vid')) {
+      sset('localStorage', 'kmpf_vid', '1');
+      hit('uv_total');
+    }
+    if (sget('localStorage', 'kmpf_lastday') !== today) {
+      sset('localStorage', 'kmpf_lastday', today);
+      hit('uv_day_' + today);
+    }
 
-    data.pages[path] = (data.pages[path] || 0) + 1;
-    data.referrers[referrer] = (data.referrers[referrer] || 0) + 1;
-    data.devices[device] = (data.devices[device] || 0) + 1;
+    // Session (one per tab visit): source, device, browser, region
+    if (!sget('sessionStorage', 'kmpf_sid')) {
+      sset('sessionStorage', 'kmpf_sid', '1');
+      hit('ss_total');
+      hit('ss_day_' + today);
+      hit('src_' + source());
+      hit('dev_' + device());
+      hit('br_' + browser());
+      hit('geo_' + region());
+    }
+    try { sessionStorage.removeItem('kmpf_ref'); } catch (e) {}
 
-    // Log item
-    var item = {
-      id: Date.now().toString(36) + Math.random().toString(36).substr(2, 4),
-      type: 'pageview',
-      path: path,
-      title: title,
-      referrer: referrer,
-      device: device,
-      browser: browser,
-      timestamp: Date.now()
-    };
-
-    if (!data.history) data.history = [];
-    data.history.unshift(item);
-    if (data.history.length > 200) data.history.pop();
-
-    saveAnalyticsData(data);
+    if (page === 'software_item') trackSoftware();
   }
 
-  // 7. Record Custom Event (Download resume, view deck, click demo)
-  function trackEvent(category, action, label) {
-    var data = getAnalyticsData();
-    if (!data.events) data.events = [];
-
-    var eventItem = {
-      id: Date.now().toString(36) + Math.random().toString(36).substr(2, 4),
-      type: 'event',
-      category: category,
-      action: action,
-      label: label || '',
-      path: window.location.pathname,
-      timestamp: Date.now()
-    };
-
-    data.events.unshift(eventItem);
-    if (data.events.length > 200) data.events.pop();
-
-    saveAnalyticsData(data);
+  var lastSoftware = '';
+  function trackSoftware() {
+    var s = softwareSlug();
+    if (!s || s === lastSoftware) return;
+    lastSoftware = s;
+    hit('sw_' + s);
   }
 
-  // 8. Auto-track High-Value Clicks
-  function setupClickTracking() {
-    document.addEventListener('click', function(e) {
-      var target = e.target.closest('a, button');
-      if (!target) return;
+  // ------------------------------------------------------- click events
+  function trackClicks() {
+    document.addEventListener('click', function (e) {
+      var a = e.target && e.target.closest ? e.target.closest('a') : null;
+      if (!a) return;
+      var href = a.getAttribute('href') || '';
+      if (!href || href.charAt(0) === '#') return;
 
-      var href = target.getAttribute('href') || '';
-      var text = (target.innerText || '').trim();
+      var abs;
+      try { abs = new URL(href, location.href); } catch (err) { return; }
+      var path = abs.pathname.toLowerCase();
 
-      // Resume download
-      if (href.indexOf('Resume.pdf') > -1 || target.hasAttribute('download') || text.toLowerCase().indexOf('resume') > -1) {
-        trackEvent('Conversion', 'Resume Download', href);
+      if (/resume[^/]*\.pdf$/.test(path)) { hit('ev_resume'); return; }
+      if (/\/decks\/[^/]+\.pdf$/.test(path)) {
+        hit('ev_deck');
+        hit('deck_' + slug(path.split('/').pop()));
+        return;
       }
-      // Case study PDF deck opens
-      else if (href.indexOf('.pdf') > -1 && href.indexOf('decks') > -1) {
-        var deckName = href.split('/').pop().replace('.pdf', '');
-        trackEvent('Case Study', 'Deck Opened', deckName);
-      }
-      // External project demos
-      else if (href.indexOf('vercel.app') > -1 || href.indexOf('desk365.io') > -1) {
-        trackEvent('Outbound Demo', 'Live Demo Visited', href);
-      }
-      // Social / contact
-      else if (href.indexOf('linkedin.com') > -1) {
-        trackEvent('Contact', 'LinkedIn Profile Click', href);
-      } else if (href.indexOf('mailto:') > -1) {
-        trackEvent('Contact', 'Email Click', href);
+      if (abs.protocol === 'mailto:') { hit('ev_email'); return; }
+      if (abs.protocol === 'tel:') { hit('ev_phone'); return; }
+      if (/linkedin\.com$/.test(abs.hostname)) { hit('ev_linkedin'); return; }
+
+      // External link from a software page = live demo / product visit
+      if (abs.hostname && abs.hostname !== location.hostname &&
+          pageName() === 'software_item') {
+        hit('ev_demo');
+        var s = softwareSlug();
+        if (s) hit('demo_' + s);
       }
     }, true);
   }
 
-  // 9. Optional Google Analytics 4 forwarder
-  function loadGoogleAnalyticsIfConfigured() {
-    var gaId = localStorage.getItem(GA_KEY);
-    if (!gaId || window.__ga_loaded) return;
-    window.__ga_loaded = true;
-
-    var s = document.createElement('script');
-    s.async = true;
-    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(gaId);
-    document.head.appendChild(s);
-
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){ window.dataLayer.push(arguments); }
-    window.gtag = gtag;
-    gtag('js', new Date());
-    gtag('config', gaId);
-  }
-
-  // Initialize
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function() {
-      trackPageView();
-      setupClickTracking();
-      loadGoogleAnalyticsIfConfigured();
-    });
-  } else {
+  // -------------------------------------------------------------- init
+  function init() {
     trackPageView();
-    setupClickTracking();
-    loadGoogleAnalyticsIfConfigured();
+    trackClicks();
+    window.addEventListener('hashchange', function () {
+      if (pageName() === 'software_item') {
+        hit('pv_total');
+        hit('pv_day_' + dayKey());
+        hit('page_software_item');
+        trackSoftware();
+      }
+    });
   }
 
-  // Expose global helper
-  window.KamalishAnalytics = {
-    getData: getAnalyticsData,
-    trackEvent: trackEvent,
-    resetData: function() {
-      localStorage.removeItem(STORAGE_KEY);
+  if (!/\/analytics\/?(index\.html)?$/.test(location.pathname)) {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
     }
-  };
+  }
 })();
